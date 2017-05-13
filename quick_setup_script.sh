@@ -21,19 +21,18 @@ esac
 echo "***INFORM*** Oh, we are on $1"
 echo "Lets install some things..."
 install_list=(
-              fish
-              htop
+              fish # fish shell because awesomeness
+              htop # This isn't on some distrobutions for some reason, so usefull
              )
 
 # Installer section
 for i in ${install_list[@]}
     do
-        eval "$installer $i"
+        eval "echo $installer $i" # AHHHHH INSTALL SECTION BE SO CAREFUL HERE I'M SERIOUS -----------------------------------------
     done
 
 arch_install_list=(
                    chrome
-                   sublime-text
                   )
 
 # Arch specific section
@@ -43,10 +42,20 @@ if [ $1 = "arch" ]; then
     echo "***INFORM*** installing some arch specific yaourt things now..."
     for i in ${arch_install_list[@]}
         do
-            eval "$archinstaller $i"
+            eval "echo $archinstaller $i" # AHHHHH INSTALL SECTION BE SO CAREFUL HERE I'M SERIOUS ---------------------------------
         done
 else echo "Nope, not on arch"
 fi
+
+# Some universal installer sections, not distrobution specific
+
+universal_installer_commands=(
+                              "echo curl https://sh.rustup.rs -sSf | sh" # yes yes yes I know how dangerous this is blah blah and it's automatic ahhh I know I'll take the risk
+                             )
+for i in "${universal_installer_commands[@]}"
+    do
+        eval $i # AHHHHH INSTALL SECTION BE SO CAREFUL HERE I'M SERIOUS -----------------------------------------
+    done
 
 done_installing="***INFORM*** done installing things"
 eval "echo $done_installing" # yikes that's pretty ugly
