@@ -28,6 +28,7 @@ install_list=(
               fish # fish shell because awesomeness
               htop # This isn't on some distrobutions for some reason, so usefull
               ranger # awesome folder viewer
+              thunar # xfce folder viewer, not bad for gui
               rofi # launcher
               vim # not always installed
               # nvim # nvim >> vim but will this actually install it?
