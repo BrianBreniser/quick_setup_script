@@ -31,6 +31,8 @@ install_list=(
               rofi # launcher
               vim # not always installed
               # nvim # nvim >> vim but will this actually install it?
+              terminology # nice terminal emulator
+              termite # also a good terminal emulator
              )
 
 # Installer section
