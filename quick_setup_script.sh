@@ -10,7 +10,7 @@ case $1 in
         ;;
     "arch")
         installer="sudo pacman -Syyu "
-        archinstaller="yaourt -Syyu "
+        archinstaller="yaourt -S "
         update="sudo pacman -Syyu"
         ;;
     "osx")
@@ -34,6 +34,7 @@ install_list=(
               # nvim # nvim >> vim but will this actually install it?
               terminology # nice terminal emulator
               termite # also a good terminal emulator
+              glances # like htop, built in python, quick view of system resources
              )
 
 # Installer section
@@ -43,7 +44,10 @@ for i in ${install_list[@]}
     done
 
 arch_install_list=(
-                   chrome
+                   google-chrome
+                   firefox-developer
+                   visual-studio-code
+                   vivaldi
                   )
 
 # Arch specific section
