@@ -35,6 +35,7 @@ install_list=(
               terminology # nice terminal emulator
               termite # also a good terminal emulator
               glances # like htop, built in python, quick view of system resources
+              git # because reasons obviously
              )
 
 # Installer section
