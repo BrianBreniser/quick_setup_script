@@ -9,7 +9,7 @@ case $1 in
         update="sudo apt-get update"
         ;;
     "arch")
-        installer="sudo pacman -Syyu "
+        installer="sudo pacman -noconfirm -Syyu "
         archinstaller="yaourt -S "
         update="sudo pacman -Syyu"
         ;;
@@ -36,6 +36,7 @@ install_list=(
               termite # also a good terminal emulator
               glances # like htop, built in python, quick view of system resources
               git # because reasons obviously
+              cmake # because reasons obviously
              )
 
 # Installer section
@@ -46,9 +47,8 @@ for i in ${install_list[@]}
 
 arch_install_list=(
                    google-chrome
-                   firefox-developer
-                   visual-studio-code
-                   vivaldi
+                   firefox
+                   visual-studio-code-bin
                   )
 
 # Arch specific section
@@ -88,8 +88,7 @@ for i in ${cargo_install_list[@]}
     done
 
 
-done_installing="***INFORM*** done installing things"
-eval "echo $done_installing" # yikes that's pretty ugly
+echo "***INFORM*** done installing things"
 
 ### Some notes on things I don't know if I can automate ###
 ## Sublime text 3 packages
